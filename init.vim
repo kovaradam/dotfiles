@@ -71,7 +71,7 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'tpope/vim-fugitive'
+plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -93,61 +93,6 @@ call plug#end()
 " enable filetype plugins
 filetype plugin on
 
-" ALE
-
-" let g:ale_fixers = {
-" \   'typescript': ['prettier'],
-" \   'typescriptreact': ['prettier'],
-" \   'javascript': ['prettier'],
-" \   'javasriptreact': ['prettier'],
-" \   'json': ['prettier'],
-" \   'markdown': ['prettier'],
-" \   'css': ['prettier'],
-" \}
-" let g:ale_fix_on_save = 1
-" let g:ale_linters_explicit = 1
-
-" Linting
-"
-" set signcolumn=yes                  " always show the signcolumn on LH side
-" let g:ale_set_highlights = 0        " don't highlight first char of errors
-" let g:ale_completion_enabled = 1    " enable completion when available
-"
-" let g:ale_linters = {
-" \ 'javascript': ['eslint'],
-" \ 'typescript': ['eslint', 'tsserver']
-" \}
-" let g:ale_linters_ignore = {
-" \ 'typescript': ['tslint']
-" \}
-"
-" let g:ale_fix_on_save = 1
-" let g:ale_fixers = {
-" \ 'css': ['prettier'],
-" \ 'html': ['prettier'],
-" \ 'javascript': ['prettier'],
-" \ 'typescript': ['prettier'],
-" \ 'typescriptreact': ['prettier'],
-" \ 'javasriptreact': ['prettier'],
-" \ 'json': ['prettier']
-" \}
-"
-" let g:ale_lint_on_insert_leave = 1
-" let g:ale_typescript_prettier_executable = 'prettier_d'
-"
-" Prettier 
-
-" let g:prettier#exec_cmd_async = 1
-" " when running at every change you may want to disable quickfix
-" let g:prettier#quickfix_enabled = 0
-"
-" " autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
-" autocmd InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
-
-" Coc
-
-" command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
 let g:coc_global_extensions = [
 	\ 'coc-snippets',
 	\ 'coc-pairs',
@@ -158,8 +103,6 @@ let g:coc_global_extensions = [
 	\ ]
 
 autocmd BufWritePost *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html :CocCommand prettier.formatFile
-" autocmd InsertLeave  *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html :CocCommand prettier.formatFile
-
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -327,27 +270,10 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Rooter
 
-
-
 let g:rooter_patterns = ['package.json']
 
-" NerdTREE
-
-" let g:NERDTreeGitStatusIndicatorMapCustom = {
-                " \ 'Modified'  :'m',
-                " \ 'Staged'    :'s',
-                " \ 'Untracked' :'u',
-                " \ 'Renamed'   :'r',
-                " \ 'Unmerged'  :'y',
-                " \ 'Deleted'   :'D',
-                " \ 'Dirty'     :'d',
-                " \ 'Ignored'   :'i',
-                " \ 'Clean'     :'c',
-                " \ 'Unknown'   :'?',
-                " \ }
-"
-let g:NERDTreeGitStatusWithFlags = 0
-" let g:NERDTreeGitStatusWithFlags = 1
+" let g:NERDTreeGitStatusWithFlags = 0
+let g:NERDTreeGitStatusWithFlags = 1
 
 let g:NERDTreeGitStatusNodeColorization = 1
 let g:NERDTreeColorMapCustom = {
@@ -362,7 +288,7 @@ let g:NERDTreeColorMapCustom = {
 		\ }
 
 let g:NERDTreeHighlightCursorline = 1
-" let g:nerdtree_sync_cursorline = 1
+let g:nerdtree_sync_cursorline = 1
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -380,25 +306,6 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
-
-" statusline
-"
-" set statusline+=%#PmenuSel#
-" " Fugitive
-" set statusline+=\ %{FugitiveStatusline()}
-" set statusline+=%#LineNr#
-" set statusline+=\ %f
-" set statusline+=%m\
-" set statusline+=%=
-" set statusline+=%#CursorColumn#
-" set statusline+=\ %y
-" set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-" set statusline+=\[%{&fileformat}\]
-" set statusline+=\ %p%%
-" set statusline+=\ %l:%c
-" set statusline+=\
-"
-" " NERD commenter
 
 " Create default mappings
 let g:NERDCreateDefaultMappings = 1
