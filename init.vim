@@ -12,9 +12,6 @@ set tabstop=2
 " " set map leader to Space
 let mapleader = ' '
 
-" set shell=\"C:/cmder/cmder_shell.bat\"
-" set shell=\"term://C:/Program\ Files/Git/usr/bin/bash.EXE\"
-
 set showmatch							 " show matching
 set ignorecase							" case insensitive
 set mouse=v								 " middle-click paste with
@@ -74,7 +71,7 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -330,6 +327,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Rooter
 
+
+
 let g:rooter_patterns = ['package.json']
 
 " NerdTREE
@@ -430,5 +429,7 @@ let g:NERDToggleCheckAllLines = 1
 
 " Airline
 "
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#enabled = 1
-set showtabline=2
+" set showtabline=2
+
