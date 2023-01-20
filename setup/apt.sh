@@ -27,6 +27,8 @@ echo "> Installing neovim"
 
 sudo apt install neovim
 
+mkdir ~/.config/nvim
+cp vim/init.vim ~/.config/nvim
 
 # NODE 18.x
 
@@ -40,3 +42,8 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&sudo apt-get
 mkdir ~/dev
 mkdir ~/work
 mkdir ~/temp
+
+
+echo "> Installing miscellaneous bins"
+sudo apt install tree htop
+
