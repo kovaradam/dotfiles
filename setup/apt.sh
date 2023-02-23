@@ -7,7 +7,10 @@ sudo apt update
 sudo apt install fish
 
 # apply config
+
+cd fish
 bash fish/install.sh
+cd ..
 
 # set fish as default shell
 chsh -s $(whereis fish | awk '{print $2}')
