@@ -20,8 +20,7 @@ chsh -s $(whereis fish | awk '{print $2}')
 
 echo "> Installing ulauncher"
 
-sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt 
-install ulauncher
+sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt install ulauncher
 
 
 # NEOVIM
@@ -49,4 +48,8 @@ mkdir ~/temp
 
 echo "> Installing miscellaneous bins"
 sudo apt install tree htop
+
+echo "> Download avatar"
+
+curl "https://avatars.githubusercontent.com/u/52539044?s=400&u=14cf6f30d775bebde80660ecc45242affe65159f&v=4" --output ~/Pictures/avatar.png
 
